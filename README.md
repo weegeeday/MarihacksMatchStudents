@@ -1,2 +1,4 @@
 # MarihacksMatchStudents
-Marihacks 2024 student affair project
+Marihacks 2024 Student Affairs Project
+
+
