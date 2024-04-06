@@ -36,7 +36,10 @@ def login():
 def admin_login():
     LoginAttemptState.password = ""
     page = rx.container(
-        login()
+        rx.center(
+            login(),
+            height="100vh"
+        ),
     )
     
 

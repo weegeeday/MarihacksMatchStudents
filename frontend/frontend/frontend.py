@@ -6,14 +6,31 @@ from frontend.pages import *
 
 import reflex as rx
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction/"
-filename = f"{config.app_name}/{config.app_name}.py"
+style = {
+    
+    "font_family" : "Roboto",
+
+
+    rx.heading : {
+        "font_family" : "Roboto"
+    }
+}
 
 
 
 
 
-app = rx.App()
+app = rx.App(
+    stylesheets=[
+        "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"],
+    style=style,
+    theme=rx.theme(
+        appearance="dark",  # Set the appearance to 'dark' for dark mode
+        has_background=True,
+        radius="large",
+        accent_color="teal",
+    ),
+)
 app.add_page(index)
 app.add_page(admin_failed, route="/admin-failed")
 app.add_page(admin_login, route="/admin-login")

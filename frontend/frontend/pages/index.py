@@ -2,13 +2,15 @@
 
 import reflex as rx
 from frontend.states import AuthState
+from frontend.components import footer
 
 
 def index() -> rx.Component:
-    return rx.center(
+
+    page = rx.center(
         rx.vstack(
             rx.heading("Marianopolis Mentor Portal", size="9"),
-            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply to the program, "),
+            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply, click ", size="4"),
             rx.hstack(
                 rx.button("Applicant Login", size="4"),
                 rx.button("Admin Login", size="4", on_click=rx.redirect("/admin-login")),
@@ -18,4 +20,9 @@ def index() -> rx.Component:
             font_size="2em",
         ),
         height="100vh",
+    )
+
+    return rx.container(
+        page,
+        
     )
