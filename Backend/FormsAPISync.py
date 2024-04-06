@@ -3,5 +3,5 @@ class FormsSync:
 
     @staticmethod
     def Sync(Id):
-        Form2mdb.Form2mdb.InsertData(Id)
+        return Form2mdb.Form2mdb.InsertData(Id)
         
