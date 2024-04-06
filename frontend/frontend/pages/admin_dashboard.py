@@ -27,6 +27,7 @@ def header():
 def do_match():
 
     Sync.Sync("1sMoOAui_9mI1t9Sny4T18RAlgQHNqnN3w5DEPAwR3p8")
+    
 
 
 @rx.page(on_load=AuthState.check_admin_login)
