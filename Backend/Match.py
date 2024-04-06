@@ -62,7 +62,7 @@ def MatchGender(mentor, candidates):
 
 
 
-def MatchM(mentee):
+def MatchMentee(mentee):
     candidates = []
     for answer in mentee["answers"]:
         if answer == "36b8a936":
@@ -103,6 +103,4 @@ def MatchGender(mentee, candidates):
 
     
 
-def MatchMentee():           
-    for m in mentees.find():
-        MatchMentee(m)
+            
