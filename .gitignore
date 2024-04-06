@@ -8,4 +8,4 @@
 # Except the following files
 #/Backend/credentials.json dont commit cred.json ever
 /Backend/token.json
-Backend/.DS_Store
+/Backend/.DS_Store
