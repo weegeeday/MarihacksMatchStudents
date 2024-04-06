@@ -18,15 +18,16 @@ client = MongoClient(ip, 27017)
 db = client['main']
 mentees = db['mentees']
 mentors = db['mentors']
+print(mentors.find_one({"responseId": "ACYDBNh9kG0Jb8al4hhHDSb-lDlH9hwX_HEq2yxvUB1XIztpRdYU8FOgjDwzRCyrcbUOZoM"}))
 class Form2mdb:
     
 
     @staticmethod
-    def FormGetNparse(fid):
+    def InsertData(fid):
         data = FormsAPI.FormsResp.GetResp(fid)
-        print(data)
+        #print(data)
         #how can we get a python dict into MDB?
         resp = data["responses"]
         for x in resp:
-            if
-            mentors.insert_one(resp)
+            #if mentors
+            mentors.insert_one(x)
