@@ -1,6 +1,7 @@
 import reflex as rx
 from frontend.states.auth_state import AuthState
 
+
 PASSWORD = "M4r14n0p0l1S"
 
 class LoginAttemptState(rx.State):
