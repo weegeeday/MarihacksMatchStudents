@@ -10,7 +10,7 @@ def index() -> rx.Component:
     page = rx.center(
         rx.vstack(
             rx.heading("Marianopolis Mentor Portal", size="9"),
-            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply, click ", size="4"),
+            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply, click ", rx.link("here.", href="https://forms.gle/KG6eqeqddWMHBZ279"), size="4"),
             rx.hstack(
                 rx.button("Applicant Login", size="4", on_click=rx.redirect("/user-login")),
                 rx.button("Admin Login", size="4", on_click=rx.redirect("/admin-login")),

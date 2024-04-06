@@ -45,7 +45,7 @@ class UserLoginAttemptState(rx.State):
                         print(f"match: {result}")
                         AuthState.logged_in, AuthState.is_admin, AuthState.username = True, False, result
                         self.user = ""
-                        rx.window_alert("MENTEE")
+                        
                         return rx.redirect(f"/mentee/{result}")
         
         for mentor in mentors.find():
@@ -58,8 +58,10 @@ class UserLoginAttemptState(rx.State):
                         print(f"match mentor: {result}")
                         AuthState.logged_in, AuthState.is_admin, AuthState.username = True, False, result
                         self.user = ""
-                        rx.window_alert("MENTEE")
+                        
                         return rx.redirect(f"/mentor/{result}")
+        
+        return rx.window_alert("ERROR: Username not found")
         
 
 
