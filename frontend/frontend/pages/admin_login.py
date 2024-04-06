@@ -10,7 +10,7 @@ class LoginAttemptState(rx.State):
 
     def login(self):
         if self.password == PASSWORD:
-            AuthState.logged_in, AuthState.is_admin = True, True
+            AuthState.logged_in, AuthState.is_admin, AuthState.username = True, True, "ADMIN"
             self.password = ""
             return rx.redirect("/admin")
         else:
@@ -36,7 +36,10 @@ def login():
 def admin_login():
     LoginAttemptState.password = ""
     page = rx.container(
-        login()
+        rx.center(
+            login(),
+            height="100vh"
+        ),
     )
     
 
