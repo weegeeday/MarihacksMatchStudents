@@ -1,6 +1,8 @@
 
 
 import reflex as rx
+from frontend.states import AuthState
+
 
 def index() -> rx.Component:
     return rx.center(

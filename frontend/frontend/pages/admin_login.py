@@ -1,17 +1,17 @@
 import reflex as rx
-from frontend.state import State
+from frontend.states.auth_state import AuthState
 
 PASSWORD = "M4r14n0p0l1S"
 
-class AuthState(rx.State):
+class LoginAttemptState(rx.State):
 
     password: str = ""
 
     def login(self):
         if self.password == PASSWORD:
-            State.logged_in, State.is_admin = True, True
+            AuthState.logged_in, AuthState.is_admin = True, True
             self.password = ""
-            return rx.redirect("/")
+            return rx.redirect("/admin")
         else:
             return rx.window_alert("Invalid Password")
         
@@ -22,8 +22,8 @@ def login():
             rx.card(
                 rx.vstack(
                     rx.text("Please enter admin password."),
-                    rx.input(placeholder="Password", type="password", on_change=AuthState.set_password),
-                    rx.button("Submit", on_click=AuthState.login), 
+                    rx.input(placeholder="Password", type="password", on_change=LoginAttemptState.set_password),
+                    rx.button("Submit", on_click=LoginAttemptState.login), 
                 )
         )
     )
@@ -33,7 +33,7 @@ def login():
 
 
 def admin_login():
-    AuthState.password = ""
+    LoginAttemptState.password = ""
     page = rx.container(
         login()
     )
