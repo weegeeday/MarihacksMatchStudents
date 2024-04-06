@@ -32,10 +32,10 @@ def MatchProgram(mentor):
             for mentee in mentees.find():
                 for a in mentee["answers"]:
                     if a == "36b8a936":
-                        if mentees["answers"][a]["textAnswers"]["answers"][0]["value"] == mentorProgram:
-                            for key in mentees["answers"]:
+                        if mentee["answers"][a]["textAnswers"]["answers"][0]["value"] == mentorProgram:
+                            for key in mentee["answers"]:
                                 if key == "12c982a5":
-                                    candidates.append(mentees["answers"][key]["textAnswers"]["answers"][0]["value"])
+                                    candidates.append(mentee["answers"][key]["textAnswers"]["answers"][0]["value"])
 
     return candidates
 
