@@ -1,6 +1,7 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 
 from rxconfig import config
+from frontend.pages import *
 
 import reflex as rx
 
@@ -8,26 +9,11 @@ docs_url = "https://reflex.dev/docs/getting-started/introduction/"
 filename = f"{config.app_name}/{config.app_name}.py"
 
 
-class State(rx.State):
-    """The app state."""
 
 
-def index() -> rx.Component:
-    return rx.center(
-        rx.vstack(
-            rx.heading("Marianopolis Mentor Portal", size="9"),
-            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply to the program, "),
-            rx.hstack(
-                rx.button("Applicant Login"),
-                rx.button("Admin Login"),
-            ),
-            align="center",
-            spacing="7",
-            font_size="2em",
-        ),
-        height="100vh",
-    )
 
 
 app = rx.App()
 app.add_page(index)
+app.add_page(admin_failed, route="/admin-failed")
+app.add_page(admin_login, route="/admin-login")
