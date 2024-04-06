@@ -25,7 +25,7 @@ mentors = db['mentors']
 # mentorGender = 0
 
 # Call MatchProgram function
-def MatchProgram(mentor):
+def MatchMentor(mentor):
     candidates = []
     for answer in mentor["answers"]:
         if answer == "36b8a936":
@@ -60,10 +60,49 @@ def MatchGender(mentor, candidates):
         
     return c[0]
 
+
+
+def MatchMentee(mentee):
+    candidates = []
+    for answer in mentee["answers"]:
+        if answer == "36b8a936":
+            menteeProgram = mentee["answers"][answer]["textAnswers"]["answers"][0]["value"]
+            for mentor in mentors.find():
+                for a in mentor["answers"]:
+                    if a == "36b8a936":
+                        if mentor["answers"][a]["textAnswers"]["answers"][0]["value"] == menteeProgram:
+                            for key in mentor["answers"]:
+                                if key == "12c982a5":
+                                    candidates.append(mentor)
+                                    
+    # print()
+    return MatchGender(mentee, candidates)
+
+def MatchGender(mentee, candidates):
+    c = []
+    for answer in mentee["answers"]:
+        if answer == "627fa5ae":
+            menteeGender = mentee["answers"][answer]["textAnswers"]["answers"][0]["value"]
+            for mentor in candidates:
+                for a in mentor["answers"]:
+                    if a == "627fa5ae":
+                        if mentor["answers"][a]["textAnswers"]["answers"][0]["value"] == menteeGender:
+                            for key in mentor["answers"]:
+                                if key == "12c982a5":
+                                    c.append(mentor["answers"][key]["textAnswers"]["answers"][0]["value"])
+    if c == []:
+        for key in candidates:
+            if key == "12c982a5":
+                c.append(mentor["answers"][key]["textAnswers"]["answers"][0]["value"])
+    if c != []:    
+        return c[0]
+    else:
+        return "None"
+
 # def Match(mentor):
 
     
 
             
-for m in mentors.find():
-    print(MatchProgram(m))
+for m in mentees.find():
+    print(MatchMentee(m))
