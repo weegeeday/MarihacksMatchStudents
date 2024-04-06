@@ -7,5 +7,7 @@
 
 # Except the following files
 #/Backend/credentials.json dont commit cred.json ever
-/Backend/token.json
 /Backend/.DS_Store
+/Backend/tokenb.json
+/Backend/tokenr.json
+/Backend/ip.txt
