@@ -12,7 +12,7 @@ def index() -> rx.Component:
             rx.heading("Marianopolis Mentor Portal", size="9"),
             rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply, click ", size="4"),
             rx.hstack(
-                rx.button("Applicant Login", size="4"),
+                rx.button("Applicant Login", size="4", on_click=rx.redirect("/user-login")),
                 rx.button("Admin Login", size="4", on_click=rx.redirect("/admin-login")),
             ),
             align="center",
