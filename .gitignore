@@ -6,5 +6,5 @@
 !/Backend/**/*
 
 # Except the following files
-/Backend/credentials.json
+#/Backend/credentials.json dont commit cred.json ever
 /Backend/token.json
