@@ -18,7 +18,6 @@ client = MongoClient(ip, 27017)
 db = client['main']
 mentees = db['mentees']
 mentors = db['mentors']
-print(mentors.find_one({"responseId": "ACYDBNh9kG0Jb8al4hhHDSb-lDlH9hwX_HEq2yxvUB1XIztpRdYU8FOgjDwzRCyrcbUOZoM"}))
 class Form2mdb:
     
 
