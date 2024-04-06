@@ -1,11 +1,10 @@
-import FormsAPI
-import time
+import Form2mdb
 class FormsSync:
 
     @staticmethod
     def Sync(Id):
         try:
-            FormsAPI.FormsResp.GetResp(Id)
+            Form2mdb.Form2mdb.InsertData(Id)
             return True
         except any:
             return False
