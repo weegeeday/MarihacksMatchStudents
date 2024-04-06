@@ -14,14 +14,12 @@ class State(rx.State):
 
 def index() -> rx.Component:
     return rx.center(
-        rx.theme_panel(),
         rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text("Get started by editing ", rx.code(filename)),
-            rx.button(
-                "Check out our docs!",
-                on_click=lambda: rx.redirect(docs_url),
-                size="4",
+            rx.heading("Marianopolis Mentor Portal", size="9"),
+            rx.text("Welcome to the Marionopolis Mentor Portal! If you want to apply to the program, "),
+            rx.hstack(
+                rx.button("Applicant Login"),
+                rx.button("Admin Login"),
             ),
             align="center",
             spacing="7",
